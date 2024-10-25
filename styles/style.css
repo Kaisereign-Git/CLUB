@@ -1,16 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=FAMILY_NAME:wght@WEIGHT_OR_RANGE&display=swap");
- 
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
- 
+
 body {
   background: #e4e9f7;
 }
- 
+
 .header1 {
   display: flex;
   align-items: center;
@@ -18,14 +18,14 @@ body {
   position: relative;
   margin-top: 100px;
 }
- 
+
 .container {
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 90vh;
 }
- 
+
 .box {
   background: white;
   display: flex;
@@ -35,12 +35,12 @@ body {
   box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.1),
     0 32px 64px -48px rgba(0, 0, 0, 0.5);
 }
- 
+
 .form-box {
   width: 450px;
   margin: 0px 10px;
 }
- 
+
 .form-box header {
   font-size: 25px;
   font-weight: 600;
@@ -48,13 +48,13 @@ body {
   border-bottom: 1px solid #e6e6e6;
   margin-bottom: 10px;
 }
- 
+
 .form-box form .field {
   display: flex;
   margin-bottom: 10px;
   flex-direction: column;
 }
- 
+
 .form-box form .input input {
   height: 40px;
   width: 100%;
@@ -64,7 +64,7 @@ body {
   border: 1px solid #ccc;
   outline: none;
 }
- 
+
 .btn {
   height: 35px;
   border: 0;
@@ -77,15 +77,15 @@ body {
   padding: 0px 10px;
   background: #84ceeb;
 }
- 
+
 .btn:hover {
   opacity: 0.9;
 }
- 
+
 .submit {
   width: 100px;
 }
- 
+
 .links {
   margin-bottom: 15px;
 }

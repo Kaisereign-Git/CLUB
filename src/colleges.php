@@ -1,12 +1,3 @@
-<?php
-session_start();
-
-// Ensure the user is logged in
-if (!isset($_SESSION['user_id'])) {
-    header("Location: ../src/login.php");
-    exit;
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,5 +6,6 @@ if (!isset($_SESSION['user_id'])) {
     <title>Document</title>
 </head>
 <body>
+    <form action="colleges"></form>
 </body>
 </html>
