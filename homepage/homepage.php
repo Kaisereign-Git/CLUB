@@ -15,5 +15,8 @@ if (!isset($_SESSION['user_id'])) {
     <title>Document</title>
 </head>
 <body>
+    <?php include "../src/colleges.php"; ?>
+
+    
 </body>
 </html>

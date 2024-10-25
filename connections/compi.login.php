@@ -66,7 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $_SESSION['is_super_admin'] = false; // Set session variable for regular user
 
                 // Redirect to the homepage
-                header("Location: ../src/homepage.php");
+                header("Location: ../homepage/homepage.php");
                 exit;
             }
         }

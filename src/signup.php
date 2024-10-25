@@ -9,11 +9,7 @@
 </head>
 
 <body>
-    <?php
-    // Include the compiled file for database and error handling
-    include("../connections/compi.signup.php");
-    ?>
-
+    <?php include("../connections/compi.signup.php"); ?>
     <div class="header1">
         <h1>Isabela State University Club Organization</h1>
     </div>

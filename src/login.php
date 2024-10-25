@@ -13,11 +13,7 @@
 </div>
 
 <body>
-    <?php
-
-    include("../connections/compi.login.php");
-    ?>
-
+    <?php include("../connections/compi.login.php"); ?>
     <div class="container">
         <div class="box form-box">
             <header>Login</header>
