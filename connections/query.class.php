@@ -28,3 +28,27 @@ class User
         }
     }
 }
+
+class College
+{
+
+    public static function create($conn, $college)
+    {
+
+        $stmt = $conn->prepare("INSERT INTO Colleges (college_name) VALUES (?)");
+
+        if (!$stmt) {
+            throw new Exception("Preparation failed: " . $conn->error);
+        }
+
+        $stmt->bind_param("s", $college);
+
+        if ($stmt->execute()) {
+            $stmt->close(); // Close the statement before returning
+            return "Registration successful!";
+        } else {
+            $stmt->close(); // Close the statement if execution fails
+            throw new Exception("Execution failed: " . $stmt->error);
+        }
+    }
+}

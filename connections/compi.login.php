@@ -48,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $_SESSION['is_super_admin'] = true; // Set session variable for super admin
 
                     // Redirect to the homepage
-                    header("Location: ../src/homepage.php");
+                    header("Location: ../homepages/homepage.superadmin.php");
                     exit;
                 }
             }
@@ -66,7 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $_SESSION['is_super_admin'] = false; // Set session variable for regular user
 
                 // Redirect to the homepage
-                header("Location: ../homepage/homepage.php");
+                header("Location: ../homepages/homepage.user.php");
                 exit;
             }
         }

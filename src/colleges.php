@@ -12,7 +12,7 @@
     <?php include("../connections/create.colleges.php"); ?>
     <div class="container">
         <div class="box form-box">
-            <header>Login</header>
+            <header>Add College</header>
             <form action="" method="post">
                 <div class="field input">
                     <label for="create-college">College Name</label>

@@ -6,7 +6,7 @@ include("../connections/dbh.php");
 include("../connections/errorHandling.php");
 
 // Include user functions
-include("../connections/user.class.php");
+include("../connections/query.class.php");
 
 // Create a database connection
 try {
