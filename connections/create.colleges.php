@@ -31,8 +31,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Debug output to check the query result
         if ($result->num_rows > 0) {
             $errorMessages[] = "College already exists."; // This should trigger if a college is found
-            // Optional: Output the number of rows found
-            error_log("College exists: " . $college_name); // Log to server error log
         }
 
         if (!empty($errorMessages)) {
