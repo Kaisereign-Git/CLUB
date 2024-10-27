@@ -5,6 +5,8 @@ if (!isset($_SESSION['user_id'])) {
     header("Location: ../src/login.php");
     exit;
 }
+
+include('../features/features.superadmin.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,10 +18,6 @@ if (!isset($_SESSION['user_id'])) {
 </head>
 
 <body>
-    <?php
-    echo "Hello Super Admin, ". $_SESSION["username"];
-    include "../src/colleges.php";
-    ?>
     <a href="../src/logout.php" class="logout-button">Logout</a>
 </body>
 
