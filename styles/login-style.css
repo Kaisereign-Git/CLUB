@@ -1,4 +1,4 @@
-@import url(../fonts/clash-display.css);
+@import url("./clash-display.css");
 
 :root {
   --c-darkest: #212529;
