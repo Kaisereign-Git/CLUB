@@ -9,16 +9,6 @@ if (!isset($_SESSION['user_id'])) {
 <!DOCTYPE html>
 <html lang="en">
 <style>
-    /* Basic reset for the body */
-    /* body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-        font-family: Arial, sans-serif;
-    } */
-
     /* Styling the button */
     .plus-icon {
         display: flex;
@@ -65,7 +55,7 @@ if (!isset($_SESSION['user_id'])) {
 </body>
 </html>
 
-<!-- <?php 
+<?php
 include("../connections/create.colleges.php");
 
 $stmt = "SELECT * FROM colleges";
@@ -79,4 +69,4 @@ if ($result->num_rows > 0) {
     }
 }
 
-?> -->
+?>

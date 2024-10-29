@@ -1,5 +1,5 @@
 <?php
-include("../connections/create.colleges.php");
+include("../connections/create.colleges.php"); // Includes the file for creating the colleges
 
 
 // Fetch colleges from the  database to display
@@ -19,6 +19,7 @@ if ($result->num_rows > 0) {
         <button type='submit' onclick='return confirm(\"Are you sure you want to delete this college?\");'>DELETE</button>
     </form>";
 
+        // Button to update the college. Has a separate file to execute the function update college
         echo "
      <form action='../features/update.college.php' method='POST' style='display:inline;'>
          <input type='hidden' name='College_Name' value='$college_name'>
@@ -30,17 +31,16 @@ if ($result->num_rows > 0) {
     echo "No colleges found.";
 }
 
+// Validates the input and executes the deletion
 if (isset($_POST['College_Name'])) {
     $college_name = $_POST['College_Name'];
 
-    // Prepare the DELETE statement correctly
+    // Mysql query for deleteion
     $stmt = $conn->prepare("DELETE FROM colleges WHERE College_Name = ?");
-
-    // Bind the parameter correctly
     $stmt->bind_param("s", $college_name);
 
     if ($stmt->execute()) {
-        header("Location: ../dashboards/dashboard.superadmin.php");
+        header("Location: ../dashboards/dashboard.superadmin.php"); // If the deletion is complete, redirects to the dashboard
         exit;
     } else {
         echo "Error deleting college: " . $stmt->error;

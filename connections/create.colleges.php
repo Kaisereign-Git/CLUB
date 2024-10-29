@@ -1,9 +1,10 @@
 <?php
 
-include("../connections/dbh.php");
-include("../connections/errorHandling.php");
-include("../connections/query.class.php");
+include("../connections/dbh.php"); // Database connection class file
+include("../connections/errorHandling.php"); // Error handling class file
+include("../connections/query.class.php"); // Query to database, has an static function for insetering data to the database table
 
+// Initializes database connection
 try {
     $db = new Dbh("localhost", "root", "Mysqlworkbench14", "clubfiler");
     $conn = $db->connect(); // Connect to the database
@@ -11,16 +12,17 @@ try {
     ErrorHandler::handleError("Database connection failed: " . $e->getMessage());
 }
 
-$errorMessages = []; // Initialize an array for error messages
-
+// Retrieves the input from the form and validates it
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["create-college"])) {
     // Sanitize and validate the input
     $college_name = htmlspecialchars(trim($_POST["create-college"]));
 
+    // Converts input to uppercase
     $college_name = strtoupper($college_name);
 
+    // Input field must have an input
     if (empty($college_name)) {
-        $errorMessages[] = "Field must have input.";
+        ErrorHandler::handleError("Field must have input.");
     } else {
         // Check if the college already exists in the database
         $stmt = $conn->prepare("SELECT * FROM colleges WHERE college_name = ?");
@@ -28,22 +30,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["create-college"])) {
         $stmt->execute();
         $result = $stmt->get_result();
 
-        // Debug output to check the query result
+        // Outputs an error if the college already exists
         if ($result->num_rows > 0) {
-            $errorMessages[] = "College already exists."; // This should trigger if a college is found
+            ErrorHandler::handleError("College already exists.");
         }
 
-        if (!empty($errorMessages)) {
-            ErrorHandler::handleError(implode(" ", $errorMessages));
-        }
-
+        // Executes the query to create the college
         try {
             $message = College::create($conn, $college_name);
-            // Display success message and login link
+            // Display success message and go-back link
             echo "New College Added. ";
             echo '<a href="../dashboards/dashboard.superadmin.php" class="logout-button">Go Back</a>';
             exit;
         } catch (Exception $e) {
+            // Outputs an error if execution fails
             ErrorHandler::handleError("Registration failed: " . $e->getMessage());
         }
         $stmt->close();

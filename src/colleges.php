@@ -1,3 +1,5 @@
+<!-- Form for creating college -->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +10,7 @@
 </head>
 
 <body>
-    <?php include("../connections/create.colleges.php"); ?>
+    <?php include("../connections/create.colleges.php"); ?> <!-- Main process file for creating the colleges -->
     <div class="container">
         <div class="box form-box">
             <header>Add College</header>
@@ -22,7 +24,7 @@
                     <input type="submit" class="btn" name="submit" value="Create College" required>
                 </div>
                 <div class="field">
-                <a < href="../homepages/homepage.superadmin.php">Go Back</a>
+                <a < href="../homepages/homepage.superadmin.php">Go Back</a> <!-- Redirects to the superadmin homepage -->
                 </div>
             </form>
         </div>

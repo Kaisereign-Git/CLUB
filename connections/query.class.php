@@ -31,16 +31,18 @@ class User
 
 class College
 {
-
+    // Static method to create a new college
     public static function create($conn, $college)
     {
 
+        // Prepare the SQL statement
         $stmt = $conn->prepare("INSERT INTO Colleges (college_name) VALUES (?)");
 
         if (!$stmt) {
             throw new Exception("Preparation failed: " . $conn->error);
         }
 
+        // Bind the parameter
         $stmt->bind_param("s", $college);
 
         if ($stmt->execute()) {

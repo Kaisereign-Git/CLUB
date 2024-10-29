@@ -1,3 +1,5 @@
+<!-- Login form -->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,8 +16,8 @@
 
 <body>
     <?php
-    include("../connections/compi.login.php");
-    ?>
+    //Includes the validation, error handling, and query files for user login
+    include("../connections/compi.login.php"); ?>
 
     <div class="content">
         <div class="box-container">

@@ -1,11 +1,10 @@
 <?php
-session_start();
+session_start(); // starts a session 
 
-// Include the database connection class
-include("../connections/dbh.php");
-include("../connections/errorHandling.php");
+include("../connections/dbh.php"); // Database connection class file
+include("../connections/errorHandling.php"); // Error handling class file 
 
-// Create a database connection
+// Initializes database connection
 try {
     $db = new Dbh("localhost", "root", "Mysqlworkbench14", "clubfiler");
     $conn = $db->connect();
@@ -14,10 +13,11 @@ try {
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Validate form fields
     $student_id = trim($_POST["student-id"]);
     $password = trim($_POST["password"]);
 
-    // Validate form fields
+    // Input fields must have an input
     if (empty($student_id) || empty($password)) {
         ErrorHandler::handleError("Student ID and password are required.");
     } else {

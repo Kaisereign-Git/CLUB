@@ -1,3 +1,5 @@
+<!-- Signup form-->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,8 +16,9 @@
 
 <body>
     <?php
-    include("../connections/compi.signup.php");
-    ?>
+    // Includes the validation, error handling and query files for registering a new user
+    include("../connections/compi.signup.php"); ?>
+    
     <div class="content">
         <div class="box-container">
             <div class="box left">

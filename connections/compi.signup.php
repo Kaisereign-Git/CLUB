@@ -1,14 +1,9 @@
 <?php
-// Include the database connection class
-include("../connections/dbh.php");
+include("../connections/dbh.php"); // Database connection class file
+include("../connections/errorHandling.php"); // Error handling class file 
+include("../connections/query.class.php"); // Query to database, has an static function for registering the user
 
-// Include the error handling class
-include("../connections/errorHandling.php");
-
-// Include user functions
-include("../connections/query.class.php");
-
-// Create a database connection
+// Initializes database connection
 try {
     $db = new Dbh("localhost", "root", "Mysqlworkbench14", "clubfiler");
     $conn = $db->connect(); // Connect to the database
@@ -24,9 +19,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = htmlspecialchars(trim($_POST["pwd"]));
     $confirm_password = htmlspecialchars(trim($_POST["pwdConfirm"]));
     $email = htmlspecialchars(trim($_POST["email"]));
-    $college = htmlspecialchars(trim($_POST["college"])); // Assuming a field for college
-    $program = htmlspecialchars(trim($_POST["program"])); // Assuming a field for program
-    $section = htmlspecialchars(trim($_POST["section"])); // Assuming a field for section
+    $college = htmlspecialchars(trim($_POST["college"]));
+    $program = htmlspecialchars(trim($_POST["program"]));
+    $section = htmlspecialchars(trim($_POST["section"]));
 
     // Check if all fields are filled
     if (empty($student_id) || empty($username) || empty($password) || empty($confirm_password) || empty($email) || empty($college) || empty($program) || empty($section)) {

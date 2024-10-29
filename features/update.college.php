@@ -1,7 +1,8 @@
 <?php
-include("../connections/create.colleges.php");
+include("../connections/create.colleges.php"); // Includes the file for creating the colleges
 
 if (isset($_POST['College_Name'])) {
+    // Validates the input name in the update form from the dashboard.superadmnin file
     $old_college_name = $_POST['College_Name'];
 
     // Fetch current college details
@@ -18,6 +19,7 @@ if (isset($_POST['College_Name'])) {
     }
 }
 
+// Validates the input name in the update form below
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['new_college_name'])) {
     $new_college_name = $_POST['new_college_name'];
     $old_college_name = $_POST['College_Name'];
@@ -37,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['new_college_name'])) {
         echo "<a < href='../dashboards/dashboard.superadmin.php'>Go Back</a>";
         exit;
     } else {
-        // Update the college name
+        // Mysql query to update the current college
         $update_stmt = $conn->prepare("UPDATE colleges SET College_Name = ? WHERE College_Name = ?");
         $update_stmt->bind_param("ss", $new_college_name, $old_college_name);
 
@@ -51,8 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['new_college_name'])) {
 }
 ?>
 
-
-
+<!-- Update college form -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -66,8 +67,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['new_college_name'])) {
     <h2>Update College</h2>
     <form action="" method="POST">
         <label for="new_college_name">Current College Name:</label>
+        <!-- Has the updated college name -->
         <input type="text" name="new_college_name" value="<?php echo htmlspecialchars($college['College_Name']); ?>"
             required>
+        <!-- Has the older college name -->
         <input type="hidden" name="College_Name" value="<?php echo htmlspecialchars($old_college_name); ?>">
         <button type="submit">Update College</button>
     </form>
