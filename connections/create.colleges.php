@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["create-college"])) {
             $message = College::create($conn, $college_name);
             // Display success message and login link
             echo "New College Added. ";
-            echo '<a href="../homepages/homepage.superadmin.php" class="logout-button">Go Back</a>';
+            echo '<a href="../dashboards/dashboard.superadmin.php" class="logout-button">Go Back</a>';
             exit;
         } catch (Exception $e) {
             ErrorHandler::handleError("Registration failed: " . $e->getMessage());
