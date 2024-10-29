@@ -13,7 +13,7 @@ try {
 
 $errorMessages = []; // Initialize an array for error messages
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["create-college"])) {
     // Sanitize and validate the input
     $college_name = htmlspecialchars(trim($_POST["create-college"]));
 
