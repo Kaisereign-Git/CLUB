@@ -29,29 +29,29 @@
                         <div class="field input">
                             <label for="student-id">Student-Id</label>
                             <input type="text" name="student-id" id="student-id" placeholder="XX-XXXXX" maxlength="8"
-                                pattern="^\d{2}-\d{5}$" required>
+                                pattern="^\d{2}-\d{5}$">
 
                         </div>
 
                         <div class="field input">
                             <label for="username">Username</label>
-                            <input type="text" name="uid" id="uid" placeholder="Example: Alec Hardy" required>
+                            <input type="text" name="uid" id="uid" placeholder="Example: Alec Hardy">
                         </div>
 
                         <div class="field input">
                             <label for="password">Password</label>
-                            <input type="password" name="pwd" id="pwd" placeholder="********" required>
+                            <input type="password" name="pwd" id="pwd" placeholder="********" >
                         </div>
 
                         <div class="field input">
                             <label for="confirm-password">Confirm Password</label>
-                            <input type="password" name="pwdConfirm" id="pwdConfirm" placeholder="********" required>
+                            <input type="password" name="pwdConfirm" id="pwdConfirm" placeholder="********" >
                         </div>
 
                         <div class="field input">
                             <label for="email">Email</label>
                             <input type="email" name="email" id="email" placeholder="Example: AlecHardy@gmail.com"
-                                required>
+                                >
                         </div>
 
                         <form action="" method="post">
@@ -67,7 +67,7 @@
                                         <div class="dropdown-item" data-value="CIT">CIT</div>
                                         <div class="dropdown-item" data-value="CE">CE</div>
                                     </div>
-                                    <input type="hidden" name="college" id="college" required>
+                                    <input type="hidden" name="college" id="college" >
                                 </div>
 
                                 <!-- Program Dropdown -->
@@ -83,7 +83,7 @@
                                         <div class="dropdown-item" data-value="Entertainment and Multimedia Computing">
                                             Entertainment and Multimedia Computing</div>
                                     </div>
-                                    <input type="hidden" name="program" id="program" required>
+                                    <input type="hidden" name="program" id="program" >
                                 </div>
 
                                 <!-- Section Dropdown -->
@@ -105,12 +105,11 @@
                                         <div class="dropdown-item" data-value="Web and Mobile Application Development">
                                             Web and Mobile Application Development</div>
                                     </div>
-                                    <input type="hidden" name="section" id="section" required>
+                                    <input type="hidden" name="section" id="section" >
                                 </div>
 
                                 <div class="field">
-                                    <button type="submit" class="btn" name="submit" value="Register"
-                                        required>Register</button>
+                                    <button type="submit" class="btn" name="submit" value="Register">Register</button>
                                 </div>
                                 <div class="links">
                                     Already have an account? <a href="login.php">Login here</a>

@@ -1,42 +1,42 @@
-/*Change this to go to homepage
-document.getElementById('loginForm').addEventListener('submit', function(event) {
-    event.preventDefault();
+window.addEventListener("DOMContentLoaded", () => {
+  document.body.style.opacity = "1";
 
-    const leftSide = document.querySelector('.left');
-    const rightSide = document.querySelector('.right');
+  const leftInner = document.querySelector(".left .inner");
+  const rightInner = document.querySelector(".right .inner");
+  const boxShadow = document.querySelector(".box-container");
 
-    leftSide.classList.add('left-after');
-    rightSide.classList.add('right-after');
+  leftInner.classList.add("fade-in");
+  rightInner.classList.add("fade-in");
+  boxShadow.classList.add("yes-shadow");
+});
 
-    setTimeout(() => {
-        leftSide.querySelector('.inner').classList.add('fade-out');
-        rightSide.querySelector('.inner').classList.add('fade-out');
-
-        setTimeout(() =>{
-            leftSide.innerHTML = '';
-            rightSide.innerHTML = '';
-        }, 500);
-    }, 700);
-});*/
-
-const signUpLink = document.querySelector(".links a");
-
-signUpLink.addEventListener("click", function (event) {
-  event.preventDefault();
-
+function handleTransition(link) {
+  const leftInner = document.querySelector(".left .inner");
+  const rightInner = document.querySelector(".right .inner");
   const boxShadow = document.querySelector(".box-container");
   const leftSide = document.querySelector(".left");
   const rightSide = document.querySelector(".right");
 
-  boxShadow.classList.add("no-shadow");
+  // Start fade-out for inner contents and box shadow
+  leftInner.classList.add("fade-out");
+  rightInner.classList.add("fade-out");
+  boxShadow.classList.remove("yes-shadow"); // Start the transition
+  boxShadow.classList.add("no-shadow"); // Fades to no-shadow
+
+  // Trigger movement animations for the sides
   leftSide.classList.add("left-after");
   rightSide.classList.add("right-after");
+}
 
-  setTimeout(() => {
-    window.location.href = "signup.php";
-  }, 700);
+const links = document.querySelectorAll(".links a");
 
-  setTimeout(() => {
-    boxShadow.classList.remove("no-shadow");
-  }, 1400);
+links.forEach((link) => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    handleTransition(link);
+
+    setTimeout(() => {
+      window.location.href = link.getAttribute("href");
+    }, 600);
+  });
 });

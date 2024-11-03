@@ -40,16 +40,16 @@
                         <div class="field input">
                             <label for="student-id">Student-Id</label>
                             <input type="text" name="student-id" placeholder="XX-XXXXX" maxlength="8"
-                                pattern="^\d{2}-\d{5}$" required>
+                                pattern="^\d{2}-\d{5}$">
                         </div>
 
                         <div class="field input">
                             <label for="password">Password</label>
-                            <input type="password" name="password" placeholder="********" required>
+                            <input type="password" name="password" placeholder="********">
                         </div>
 
                         <div class="field">
-                            <button type="submit" class="btn" name="submit" value="Login" required>Login</button>
+                            <button type="submit" class="btn" name="submit" value="Login">Login</button>
                         </div>
                         <div class="links">
                             Don't have an account? <a href="signup.php">Sign-up here</a>

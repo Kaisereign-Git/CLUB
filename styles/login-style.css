@@ -49,12 +49,8 @@ body {
   overflow: hidden;
   border-radius: 25px;
   transform: translate(-50%, -50%);
-  box-shadow: 0 0 8px 2px var(--c-darkest);
-  transition: box-shadow 0.7s ease;
-}
-
-.no-shadow {
   box-shadow: none;
+  transition: box-shadow 0.5s ease;
 }
 
 .box {
@@ -459,22 +455,52 @@ input::placeholder {
   }
 }
 
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.fade-out {
+  opacity: 1;
+  animation: fadeOut 0.5s ease forwards;
+}
+
+.no-shadow {
+  box-shadow: 0 0 0px 0px rgba(0, 0, 0, 0);
+}
+
+.yes-shadow {
+  box-shadow: 0 0 8px 2px var(--c-darkest);
+}
+
 .left-after {
   transform: translate(100%, 0%);
   border-top-right-radius: 25px;
   border-bottom-right-radius: 25px;
-  border-top-left-radius: 0px;
-  border-bottom-left-radius: 0px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
   border-left: none;
   border-right: 2px solid #b6eff1;
 }
 
 .right-after {
   transform: translate(-100%, 0%);
-  border-top-right-radius: 0px;
-  border-bottom-right-radius: 0px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
   border-top-left-radius: 25px;
   border-bottom-left-radius: 25px;
   border-left: 2px solid #b6eff1;
   border-right: none;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
 }
