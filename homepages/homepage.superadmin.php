@@ -53,6 +53,7 @@ if (!isset($_SESSION['user_id'])) {
     <br>
     <br>
 </body>
+
 </html>
 
 <?php
