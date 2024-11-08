@@ -47,7 +47,8 @@ if (!isset($_SESSION['user_id'])) {
 </head>
 
 <body>
-    <a href="../src/colleges.php" class="plus-icon"'>+</a>
+    <a href="../src/colleges.php" class="plus-icon">+</a>
+    <a href=" ../features/update.profile.superadmin.php" class="plus-icon">P</a>
     <a href="../dashboards/dashboard.superadmin.php" class="dashboard">Dashboard</a>
     <a href="../src/logout.php" class="logout-button">Logout</a>
     <br>
