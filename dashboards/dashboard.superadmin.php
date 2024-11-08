@@ -48,6 +48,7 @@ if (isset($_POST['College_Name'])) {
 }
 
 echo "<a href='../src/colleges.php'>Add College</a>" . "<br>";
-echo "<a href='../features/update.profile.superadmin.php'>Profile</a>" . "<br>";
-echo "<a href='../homepages/homepage.superadmin.php'>Go Back</a>" . "<br>";
+echo "<a href='../features/view.profile.superadmin.php'>Profile View</a>" . "<br>";
+echo "<a href='../homepages/homepage.superadmin.php'>Homepage</a>" . "<br>";
+echo "<a href=''>Requests List</a>" . "<br>";
 echo "<a href='../src/logout.php'>Logout</a>" . "<br>";
